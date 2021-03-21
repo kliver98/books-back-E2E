@@ -9,6 +9,7 @@ const book = {
     "name":`Test: ${faker.random.words(4)}`,
     "author":`Test: ${faker.name.findName()}`
 }
+
 describe("When user wants to create a book",() => {
     before(async()=>{
         response = await axios.post(BASE_URL+'/books',book);
