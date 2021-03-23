@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { expect } = require('chai');
 const faker = require('faker');
-const BASE_URL = 'https://books-back-qa.herokuapp.com';
+const cs = require('../contants');
 
 let response;
 
@@ -12,7 +12,7 @@ const book = {
 
 describe("When user wants to create a book",() => {
     before(async()=>{
-        response = await axios.post(BASE_URL+'/books',book);
+        response = await axios.post(cs.baseUrl+'/books',book);
     });
 
     it('Then return a created status code',() => {

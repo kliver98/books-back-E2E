@@ -1,11 +1,11 @@
 const axios = require('axios');
 const { expect } = require('chai');
-const BASE_URL = 'https://books-back-qa.herokuapp.com';
+const cs = require('../contants');
 
 let response;
 describe("When user wants to list books",() => {
     before(async()=>{
-        response = await axios.get(BASE_URL+'/books');
+        response = await axios.get(cs.baseUrl+'/books');
     });
 
     it('Should return an OK status code',() => {

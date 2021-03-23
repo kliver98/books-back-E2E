@@ -1,7 +1,7 @@
 const axios = require('axios');
 const { expect } = require('chai');
 const faker = require('faker');
-const BASE_URL = 'https://books-back-qa.herokuapp.com';
+const cs = require('../contants');
 
 let response;
 let book = {
@@ -16,13 +16,13 @@ let updatedBook = {
 
 describe('Given a created book wants to update a book', () => {
     before(async() => {
-        response = await axios.post(BASE_URL+'/books',book);
+        response = await axios.post(cs.baseUrl+'/books',book);
     });
 
     describe('Given a created book',()=> {
         before('When user wants update book',async()=> {
             updatedBook.id = response.data.id;
-            response = await axios.put(`${BASE_URL}/books/${updatedBook.id}`,updatedBook);
+            response = await axios.put(`${cs.baseUrl}/books/${updatedBook.id}`,updatedBook);
         });
 
         it('Then status code should be 200',() => {
