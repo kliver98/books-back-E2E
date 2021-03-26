@@ -15,7 +15,11 @@ describe("When user wants to create a book",() => {
         response = await axios.post(cs.baseUrl+'/books',book);
     });
 
-    it('Then return a created status code',() => {
+    after(async() => {
+        await axios.delete(`${cs.baseUrl}/books/${response.data.id}`);
+    });
+
+    it('Then should return a 200 OK status code',() => {
         expect(response.status).eql(200); //Back has not set to return 201, just default 200
     });
 
