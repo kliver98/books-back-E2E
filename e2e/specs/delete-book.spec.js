@@ -15,7 +15,7 @@ describe("Given a created book wants to delete that book",() => {
     });
 
     describe('Given a created book',() => {
-        before('When user wants delete that created book',async()=> {
+        before('When user wants to delete that created book',async()=> {
             book.id = response.data.id;
             response = await axios.delete(`${cs.baseUrl}/books/${book.id}`);
         });

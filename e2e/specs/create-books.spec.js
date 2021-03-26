@@ -23,13 +23,21 @@ describe("When user wants to create a book",() => {
         expect(response.status).eql(200); //Back has not set to return 201, just default 200
     });
 
+    it('Then should return book with [id,name,author]',() => {
+        const resBook = response.data;
+        expect(resBook).to.have.property("id");
+        expect(resBook).to.have.property("name");
+        expect(resBook).to.have.property("author");
+    })
+
+    it('Then return a json as content type',() => {
+        expect(response.headers['content-type']).to.contain('application/json');
+    });
+
     it('Then return the created book',() => {
         const createdBook = response.data;
         expect(createdBook.name).eql(book.name);
         expect(createdBook.author).eql(book.author);
     });
     
-    it('Then return a json as content type',() => {
-        expect(response.headers['content-type']).to.contain('application/json');
-    });
 });
