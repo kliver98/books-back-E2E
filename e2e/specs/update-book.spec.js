@@ -14,7 +14,7 @@ let updatedBook = {
     "author":book.author
 }
 
-describe('Given a created book wants to update that book', () => {
+describe('Given a created book user wants to update that book', () => {
     before(async() => {
         response = await axios.post(cs.baseUrl+'/books',book);
     });
