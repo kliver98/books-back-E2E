@@ -9,3 +9,4 @@ Steps to execute the test (Only executes on console so there it's no headless or
 - See on console the outputs
 
 To be aware of some assertions and annotations I made in this exercise, please read READ.txt
+Testing by Kliver
