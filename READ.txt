@@ -1,0 +1,6 @@
+Like this workshop or homework it's about E2E Testing, I did not modify backend
+but there is a lot of bugs. For instance, when updating the user, behind escenes, can change
+id and creates a new book instead of showing error that book doesn't exist.
+This is why I put some comments on code to show some assertions I made.
+One interesting test I tried to do, axios did not allow me, was changing Origin in headers from
+another url. This way backend should not allow me to access, but only worked changing the header in postman.
