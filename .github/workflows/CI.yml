@@ -1,3 +1,4 @@
+#https://github.com/peter-evans/repository-dispatch
 name: CI
 
 on:
@@ -21,3 +22,9 @@ jobs:
         run: npm ci
       - name: Run Tests
         run: npm test
+      - name: send dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          repository: kliver98/books-back
+          event-type: TestsPassed
